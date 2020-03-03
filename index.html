@@ -106,6 +106,52 @@ body {
 <p><center><img src="https://images.financebuzz.com/1455x768/filters:quality(70)/images/2016/02/03/nicolascagepainting18.jpg" alt="Nick" style="width:400px;height:350px;margin-left:15px;"></center></p>
 
 <p><center><img src="https://vignette.wikia.nocookie.net/edwikia/images/9/9a/Jonny2x4.png/revision/latest/top-crop/width/180/height/450?cb=20110815184156" alt="PLANK" style="width:200px;height:350px;margin-left:15px;"></center></p>
+<p><html lang="en" dir="ltr" xmlns:fb="http://ogp.me/ns/fb#" class=" fonts-loaded">
+<div class="demo-wrapper">
+<div id="promoNode"><span><a href="" data-count="horizontal" class="twitter-share-button"></a></span><span><div id="___plusone_0" style="position: absolute; width: 450px; left: -10000px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position:absolute;top:-10000px;width:450px;margin:0px;border-style:none" tabindex="0" vspace="0" width="100%" id="I0_1583265487621" name="I0_1583265487621" walsh.name&amp;pfname=&amp;rpctoken=12395867" data-gapiattached="true"></iframe></div><g:plusone href="https://davidwalsh.name/demo/camera.php" size="medium" data-gapiscan="true" data-onload="true" data-gapistub="true"></g:plusone></span></div>
+	<video id="video" width="640" height="480" autoplay=""></video>
+	<canvas id="canvas" width="640" height="480"></canvas>
+	<script>
+		// Put event listeners into place
+		window.addEventListener("DOMContentLoaded", function() {
+			// Grab elements, create settings, etc.
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+            var video = document.getElementById('video');
+            var mediaConfig =  { video: true };
+            var errBack = function(e) {
+            	console.log('An error has occurred!', e)
+            };
+			// Put video listeners into place
+            if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia(mediaConfig).then(function(stream) {
+					//video.src = window.URL.createObjectURL(stream);
+					video.srcObject = stream;
+                    video.play();
+                });
+
+				navigator.webkitGetUserMedia(mediaConfig, function(stream){
+					video.src = window.webkitURL.createObjectURL(stream);
+					video.play();
+				}, errBack);
+			} else if(navigator.mozGetUserMedia) { // Mozilla-prefixed
+				navigator.mozGetUserMedia(mediaConfig, function(stream){
+					video.src = window.URL.createObjectURL(stream);
+					video.play();
+				}, errBack);
+			}
+
+			// Trigger photo take
+			document.getElementById('snap').addEventListener('click', function() {
+				context.drawImage(video, 0, 0, 640, 480);
+			});
+		}, false);
+	</script>
+</div>
+</main>
+	<style>
+</head>
+</html>
 
 </body>
 </html>
