@@ -16,7 +16,6 @@ body {
   cursor: pointer;
   display: inline-block;
 }
-/* Green */
 .success {
   color: green;
 }
@@ -24,7 +23,6 @@ body {
   background-color: #4CAF50;
   color: white;
 }
-/* Blue */
 .info {
   color: dodgerblue;
 }
@@ -32,7 +30,6 @@ body {
   background: #2196F3;
   color: white;
 }
-/* Orange */
 .warning {
   color: orange;
 }
@@ -40,7 +37,6 @@ body {
   background: #ff9800;
   color: white;
 }
-/* Red */
 .danger {
   color: red;
 }
@@ -48,7 +44,6 @@ body {
   background: #f44336;
   color: white;
 }
-/* Gray */
 .default {
   color: black;
 }
@@ -63,13 +58,10 @@ body {
 <p><b><em><center><font color="black">Calculate Your Tip Here</font></center></b></p>
 <head>
       <script>
-         //function that display value
          function dis(val)
          {
              document.getElementById("result").value+=val
          }
-
-         //function that evaluates the digit and return result
          function solve()
          {
              let x = document.getElementById("result").value
@@ -87,9 +79,9 @@ body {
 
 
          <tr>
-            <p><center><font face="comic" color="black">Enter Cost:<td colspan="1"><input type="text" id="result"/></td></center></p>
+            <p><center><b><font face="comic" color="black">Enter Cost:<td colspan="1"><input type="text" id="result"/></td></b></center></p>
 
-            <p><center><font face="comic" color="black"><u><strong>Select Tip Percentage</strong></u></font></center></p>
+            <p><center><font face="comic" color="black"><strong>Select Tip Percentage:</strong></font></center></p>
             <center><td><input type="button" value="5%"<button class="btn success"  onclick="dis('*0.05')"/></button></td>
             <td><input type="button" value="10%"<button class="btn success"  onclick="dis('*0.10')"/></button></td>
             <td><input type="button" value="15%"<button class="btn success"  onclick="dis('*0.15')"/></button></td>
@@ -102,3 +94,4 @@ body {
    </body>
 </body>
 <center></center></a>
+
